@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Alien Runner - 2D Platform Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        canvas {
+            display: block;
+        }
+        #ui-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+        }
+        #game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 48px;
+            text-align: center;
+            display: none;
+        }
+        #victory-screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 48px;
+            text-align: center;
+            display: none;
+        }
+        .game-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 24px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .game-button:hover {
+            background-color: #45a049;
+        }
+        #instructions {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id=ui-container>
+        <div id=score>Score: 0</div>
+        <div id=coin-counter>Coins: 0/9</div>
+    </div>
+    <div id=game-over>
+        Game Over
+        <br>
+        <button id=restart-button class=game-button>Restart</button>
+    </div>
+    <div id=victory-screen>
+        Victory!
+        <br>
+        <p>You've collected all coins and defeated the aliens!</p>
+        <button id=play-again-button class=game-button>Play Again</button>
+    </div>
+    <div id=instructions>
+        <p>Controls:</p>
+        <p>←/→ or A/D: Move left/right</p>
+        <p>↑ or W or Space: Jump</p>
+        <p>Collect all coins to win!</p>
+    </div>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.1/pixi.min.js></script>
+    <script src=animations.js></script>
+    <script src=sprite.js></script>
+    <script src=obstacles.js></script>
+    <script src=game.js></script>
+</body>
+</html>
+
